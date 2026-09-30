@@ -37,6 +37,9 @@ export default function Footer() {
                 <li><Link to="/mision-vision">Misión y Visión</Link></li>
                 <li><Link to="/#organizacion">Organización</Link></li>
                 <li><Link to="/#mbti">MBTI</Link></li>
+                <li><Link to="/#scrum">SCRUM</Link></li>
+                <li><Link to="/#idef-0">IDEF-0</Link></li>
+                <li><Link to="/#bpmn">BPMN</Link></li>
               </ul>
             </div>
 

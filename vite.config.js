@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/dinastia_arias/',
+  base: process.env.VITE_BASE_PATH || '/dinastia_arias/',
   plugins: [react()],
   resolve: {
     alias: {

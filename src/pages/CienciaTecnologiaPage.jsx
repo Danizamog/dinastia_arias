@@ -1,32 +1,12 @@
 import { Link } from 'react-router-dom';
 import { cienciaTecnologiaData } from '../data/knowledgeDetailData';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function CienciaTecnologiaPage() {
   return (
     <div className="subpage-wrapper" style={{ background: 'var(--color-offwhite)', minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
-      {/* Header Flotante Sticky (Misma clase site-header que en inicio para acompañar el scroll) */}
-      <header className="site-header">
-        <div className="header-left">
-          <Link to="/#inicio" className="logo-link">
-            <span className="logo-text">
-              AITECH <span>| CALIDAD</span>
-            </span>
-          </Link>
-        </div>
-
-        <div className="header-right">
-          {/* Cápsula Liquid Glass idéntica a la barra de navegación del inicio */}
-          <div className="nav-pill-container">
-            <nav className="nav-scrollable-inner">
-              <Link to="/#ciencia-tecnologia" className="nav-item-link active" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                <span>← VOLVER A INICIO</span>
-                <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'var(--color-lime)', color: 'var(--color-charcoal)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 'bold' }}>↑</span>
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Full-Width a Pantalla Completa sin Marcos */}
       <section
@@ -35,7 +15,7 @@ export default function CienciaTecnologiaPage() {
           width: '100%',
           minHeight: '80vh',
           padding: '150px 6% 80px 6%',
-          background: "linear-gradient(180deg, rgba(16, 25, 26, 0.78) 0%, rgba(18, 27, 28, 0.94) 100%), url('/assets/gestion_hero_art.jpg') center/cover no-repeat",
+          background: `linear-gradient(180deg, rgba(16, 25, 26, 0.78) 0%, rgba(18, 27, 28, 0.94) 100%), url('${import.meta.env.BASE_URL}assets/gestion_hero_art.jpg') center/cover no-repeat`,
           borderBottomLeftRadius: '36px',
           borderBottomRightRadius: '36px',
           boxShadow: '0 24px 60px rgba(0, 0, 0, 0.22)',

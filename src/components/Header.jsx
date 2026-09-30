@@ -9,6 +9,9 @@ const SECTION_MAP = {
   'equipo': null,       // Sección sin botón en header -> desmarca todo
   'organizacion': 'organizacion',
   'mbti': 'mbti',
+  'scrum': 'scrum',
+  'idef-0': 'idef-0',
+  'bpmn': 'bpmn',
   'alcance': null,      // Sección sin botón en header -> desmarca todo
   'contacto': 'contacto',
 };
@@ -21,6 +24,9 @@ const ALL_SECTIONS = [
   'equipo',
   'organizacion',
   'mbti',
+  'scrum',
+  'idef-0',
+  'bpmn',
   'alcance',
   'contacto'
 ];
@@ -44,8 +50,32 @@ export default function Header() {
       setActiveSection('ciencia-tecnologia');
       return;
     }
+    if (pathname === '/organizacion') {
+      setActiveSection('organizacion');
+      return;
+    }
+    if (pathname === '/mbti') {
+      setActiveSection('mbti');
+      return;
+    }
+    if (pathname === '/scrum') {
+      setActiveSection('scrum');
+      return;
+    }
+    if (pathname === '/idef-0') {
+      setActiveSection('idef-0');
+      return;
+    }
+    if (pathname === '/bpmn') {
+      setActiveSection('bpmn');
+      return;
+    }
+    if (pathname === '/') {
+      setActiveSection('inicio');
+      return;
+    }
 
-    // 2. Detección dinámica y precisa mediante viewport (getBoundingClientRect)
+    // Scroll spy for sections on home page (if any are left)
     const handleScroll = () => {
       const triggerPoint = window.innerHeight * 0.38; // Punto focal en la pantalla (38%)
       let currentActive = null;
@@ -84,12 +114,15 @@ export default function Header() {
   };
 
   const navItems = [
-    { to: '/#inicio', id: 'inicio', label: 'Inicio' },
-    { to: '/#gestion-tecnologias', id: 'gestion-tecnologias', label: 'Gestión' },
-    { to: '/#ciencia-tecnologia', id: 'ciencia-tecnologia', label: 'Ciencia & Innovación' },
-    { to: '/#mision-vision', id: 'mision-vision', label: 'Misión & Visión' },
-    { to: '/#organizacion', id: 'organizacion', label: 'Organización' },
-    { to: '/#mbti', id: 'mbti', label: 'MBTI' },
+    { to: '/', id: 'inicio', label: 'Inicio' },
+    { to: '/gestion-tecnologias', id: 'gestion-tecnologias', label: 'Gestión' },
+    { to: '/ciencia-tecnologia-innovacion', id: 'ciencia-tecnologia', label: 'Ciencia & Innovación' },
+    { to: '/mision-vision', id: 'mision-vision', label: 'Misión & Visión' },
+    { to: '/organizacion', id: 'organizacion', label: 'Organización' },
+    { to: '/mbti', id: 'mbti', label: 'MBTI' },
+    { to: '/scrum', id: 'scrum', label: 'SCRUM' },
+    { to: '/idef-0', id: 'idef-0', label: 'IDEF-0' },
+    { to: '/bpmn', id: 'bpmn', label: 'BPMN' },
   ];
 
   return (
